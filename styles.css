@@ -1,0 +1,73 @@
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+body,
+html {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.game-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 700px;
+  background-color: yellow;
+  font-size: 40px;
+  text-align: center;
+}
+
+.game-board {
+  display: grid;
+  border-spacing: 80px;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  border-style: none;
+  height: 300px;
+  width: 300px;
+}
+
+.square {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 60px;
+  border-spacing: 80px;
+  background-color: yellow;
+  border-style: solid;
+}
+
+.player-one,
+.player-two {
+  text-align: center;
+  justify-content: space-between;
+  font-size: 22px;
+  height: 100vh;
+  width: 300px;
+  background-color: red;
+  align-self: flex-start;
+}
+
+.counter {
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+/* .player-two {
+  text-align: center;
+  font-size: 22px;
+  height: 100vh;
+  width:275px;
+  background-color: red;
+  align-self: flex-start;
+} */
