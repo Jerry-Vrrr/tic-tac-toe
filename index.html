@@ -5,16 +5,44 @@
       <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap' rel='stylesheet'>
       <link rel='stylesheet' href='styles.css'>
   </head>
+  <wrapper class='wrapper'>
   <body>
     <section class='player-one'>
+      <h2>Player One</h2>
+      <img class='player' src='https://www.svgrepo.com/show/43115/burger.svg' alt='burger'>
+      <counter class='counter'>Wins<br>0</counter>
     </section>
-    <section class='game-board'>
+    <section class='game-section'>
       <h1>tic-tac-toe</h1>
+      <container class='game-board'>
+        <square class='square' id='square-one'>🍔
+        </square>
+        <square class='square'id='square-two'>🌭
+        </square>
+        <square class='square'id='square-three'>🌭
+        </square>
+        <square class='square'id='square-four'>
+        </square>
+        <square class='square'id='square-five'>🍔
+        </square>
+        <square class='square'id='square-six'>
+        </square>
+        <square class='square'id='square-seven'>🌭
+        </square>
+        <square class='square'id='square-eight'>
+        </square>
+        <square class='square'id='square-nine'>🍔
+        </square>
+      </container>
     </section>
     <section class='player-two'>
+      <h2>Player Two</h2>
+      <img class='player' src='https://www.svgrepo.com/show/14909/hot-dog.svg' alt='burger'>
+      <counter class='counter'>Wins<br>0</counter>
     </section>
     <script type='text/javascript' src='player.js'></script>
     <script type='text/javascript' src='game.js'></script>
     <script type='text/javascript' src='main.js'></script>
   </body>
+  </wrapper>
 </html>
