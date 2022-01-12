@@ -13,10 +13,14 @@ var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
 var playerTurn = document.querySelector('.playerTurn')
 
-gameBoard.addEventListener('click', )
+gameBoard.addEventListener('click', placeItem)
 
 //function to place tokens on grid
+function placeItem(event) {
+  event.target.innerHTML = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
+  // event.target.innerHTML = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
 
+}
 //function increase score
 
 //establish what a win is
