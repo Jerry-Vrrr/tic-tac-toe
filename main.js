@@ -31,22 +31,14 @@ function alternatePlayers() {
   var game = new Game()
   if (game.currentPlayer) {
     game.currentPlayer = false
-    // board.splice(0, 1, hotdog)
   } else {
     game.currentPlayer = true
-
   }
 }
 
-//function to place tokens on grid
 function placeItem(item) {
   console.log(event.target)
  event.target.classList.add('hamburger', 'selected')
-    // board.splice(3,1,item)
-
- //  }
- // }
-  // event.target.innerHTML = hotdog
 
 }
 //function increase score
