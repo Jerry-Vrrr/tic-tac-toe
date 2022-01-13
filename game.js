@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.currentPlayer = true;
+    this.currentPlayer = 0;
 
   }
 }
