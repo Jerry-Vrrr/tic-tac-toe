@@ -1,14 +1,14 @@
 
 var gameBoard = document.querySelector('.game-board')
-var squareOne = document.querySelector('#square-one')
-var squareTwo = document.querySelector('#square-two')
-var squareThree = document.querySelector('#square-three')
-var squareFour = document.querySelector('#square-four')
-var squareFive = document.querySelector('#square-five')
-var squareSix = document.querySelector('#square-six')
-var squareSeven = document.querySelector('#square-seven')
-var squareEight = document.querySelector('#square-eight')
-var squareNine = document.querySelector('#square-nine')
+var squareZero = document.querySelector('#s0')
+var squareOne = document.querySelector('#s1')
+var squareTwo = document.querySelector('#s2')
+var squareThree = document.querySelector('#s3')
+var squareFour = document.querySelector('#s4')
+var squareFive = document.querySelector('#s5')
+var squareSix = document.querySelector('#s6')
+var squareSeven = document.querySelector('#s7')
+var squareEight = document.querySelector('#s8')
 
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
@@ -19,9 +19,9 @@ var playerTwo = new Player('Hotdog', hotdog)
 var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
 
-var board = [
-  squareOne,squareTwo,squareThree,squareFour,squareFive,
-  squareSix,squareSeven,squareEight,squareNine]
+var board = ["","","","","","","","",""]
+  // squareOne,squareTwo,squareThree,squareFour,squareFive,
+  // squareSix,squareSeven,squareEight,squareNine]
 
 var possibleWins = [
   [0,1,2],
@@ -34,19 +34,26 @@ var possibleWins = [
   [2,4,6]
   ]
 gameBoard.addEventListener('click', validateMove)
-// window.addEventListener('load', alternatePlayers(0))
+// window.addEventListener('load', updateScore())
 
 function determineWinner() {
-  for (var i = 0; i < possibleWins.length; i++) {
-    console.log(possibleWins[i])
-    if(possibleWins[i] === board){}
+  console.log()
+  if (board.includes('z')) {
+    playerTurn.innerText = `It's A Tie! Try Again!`
   }
+  // for (var i = 0; i < possibleWins.length; i++) {
+  //   console.log(possibleWins[i])
+  //   if (possibleWins[i] === board){}
+  // }
+
+
 }
 // function to alternate players
 var player1 = new Player('Hamburger', burger)
 var player2 = new Player('Hotdog', hotdog)
 var game = new Game(player1, player2)
 
+console.log(player1)
 function alternatePlayers() {
   if (game.currentPlayer == 1) {
     game.currentPlayer = 0
@@ -61,20 +68,27 @@ function alternatePlayers() {
 }
 
 function placeItem(item) {
-  console.log(event.target)
- event.target.classList.add(item, 'selected')
+  // console.log(event.target.id)
+  var i = event.target.id.slice(1)
+  event.target.classList.add(item, 'selected')
+    board.splice(i,1,item)
 }
 
 // is move allowed?
 function validateMove() {
+  determineWinner()
+  updateScore()
   if (!event.target.classList.contains('selected')) {
-  console.log('invalid')
   alternatePlayers()
+} else {
+  window.alert('Keep Yer Danged Snacks Away From My Danged Snacks!!!')
   }
-
 }
 //function increase score
-
+function updateScore() {
+  counterOne.innerText = player1.wins
+  counterTwo.innerText = player2.wins
+}
 //establish what a win is
 
 //when a game is over, clear the board with " "

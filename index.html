@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-      <title>tic-tac-toe</title>
+      <title>tic-snack-toe</title>
       <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='styles.css'>
       <link rel='stylesheet' href='styles.css'>
   </head>
@@ -11,36 +11,38 @@
     <section class='player-one'>
       <h2>Player One</h2>
       <img class='player' src='https://www.svgrepo.com/show/43115/burger.svg' alt='burger'>
-      <counter class='counter' id='counterOne'>Wins<br>0</counter>
+      <label class='counter'>Wins<br></label>
+      <counter class='counter' id='counterOne'>0</counter>
     </section>
     <section class='game-section'>
       <h1>Tic-Snack-Toe</h1>
       <h5 class='player-turn'>Hotdog, its your turn!</h5>
       <container class='game-board'>
-        <square class='square' id='square-one'>
+        <square class='square' id='s0'>
         </square>
-        <square class='square'id='square-two'>
+        <square class='square'id='s1'>
         </square>
-        <square class='square'id='square-three'>
+        <square class='square'id='s2'>
         </square>
-        <square class='square'id='square-four'>
+        <square class='square'id='s3'>
         </square>
-        <square class='square'id='square-five'>
+        <square class='square'id='s4'>
         </square>
-        <square class='square'id='square-six'>
+        <square class='square'id='s5'>
         </square>
-        <square class='square'id='square-seven'>
+        <square class='square'id='s6'>
         </square>
-        <square class='square'id='square-eight'>
+        <square class='square'id='s7'>
         </square>
-        <square class='square'id='square-nine'>
+        <square class='square'id='s8'>
         </square>
       </container>
     </section>
     <section class='player-two'>
       <h2>Player Two</h2>
       <img class='player' src='https://www.svgrepo.com/show/14909/hot-dog.svg' alt='burger'>
-      <counter class='counter' id='counterTwo'>Wins<br>0</counter>
+      <label class='counter'>Wins<br></label>
+      <counter class='counter' id='counterTwo'>0</counter>
     </section>
     <script type='text/javascript' src='player.js'></script>
     <script type='text/javascript' src='game.js'></script>
