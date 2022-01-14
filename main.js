@@ -20,6 +20,8 @@ var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
 
 var board = ["","","","","","","","",""]
+// var board = [squareZero, squareOne, squareTwo, squareThree,
+// squareFour, squareFive, squareSix, squareSeven, squareEight]
   // squareOne,squareTwo,squareThree,squareFour,squareFive,
   // squareSix,squareSeven,squareEight,squareNine]
 
@@ -37,8 +39,8 @@ gameBoard.addEventListener('click', validateMove)
 // window.addEventListener('load', updateScore())
 
 function determineWinner() {
-  console.log()
-  if (board.includes('z')) {
+  console.log(board)
+  if (!board.includes("")) {
     playerTurn.innerText = `It's A Tie! Try Again!`
   }
   // for (var i = 0; i < possibleWins.length; i++) {
@@ -72,9 +74,9 @@ function placeItem(item) {
   var i = event.target.id.slice(1)
   event.target.classList.add(item, 'selected')
     board.splice(i,1,item)
+    determineWinner()
 }
 
-// is move allowed?
 function validateMove() {
   determineWinner()
   updateScore()
