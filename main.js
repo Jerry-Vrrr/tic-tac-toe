@@ -12,7 +12,7 @@ var squareNine = document.querySelector('#square-nine')
 
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
-var playerTurn = document.querySelector('.playerTurn')
+var playerTurn = document.querySelector('.player-turn')
 
 var playerOne = new Player('Hamburger', burger)
 var playerTwo = new Player('Hotdog', hotdog)
@@ -34,7 +34,7 @@ var possibleWins = [
   [2,4,6]
   ]
 gameBoard.addEventListener('click', alternatePlayers)
-
+// window.addEventListener('load', alternatePlayers(0))
 
 function doStuff() {
 
@@ -43,18 +43,15 @@ function doStuff() {
 var player1 = new Player('Hamburger',burger)
 var player2 = new Player('Hotdog',hotdog)
 var game = new Game()
+
 function alternatePlayers() {
-
-  console.log(game.currentPlayer)
-
   if (game.currentPlayer == 1) {
     game.currentPlayer = 0
-    console.log(game.currentPlayer)
-      placeItem('hamburger')
-
+    playerTurn.innerText = `Hotdog, its your turn!`
+    placeItem('hamburger')
   } else {
     game.currentPlayer = 1
-    console.log(game.currentPlayer)
+    playerTurn.innerText = `Hamburger, its your turn!`
     placeItem('hotdog')
 
   }
