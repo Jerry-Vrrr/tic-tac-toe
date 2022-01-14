@@ -12,7 +12,7 @@ var squareNine = document.querySelector('#square-nine')
 
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
-var playerTurn = document.querySelector('.playerTurn')
+var playerTurn = document.querySelector('.player-turn')
 
 var playerOne = new Player('Hamburger', burger)
 var playerTwo = new Player('Hotdog', hotdog)
@@ -23,22 +23,50 @@ var board = [
   squareOne,squareTwo,squareThree,squareFour,squareFive,
   squareSix,squareSeven,squareEight,squareNine]
 
-var wins = [[0,1,2], [0,3,6], []]
-gameBoard.addEventListener('click', placeItem)
+var possibleWins = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+  ]
+gameBoard.addEventListener('click', alternatePlayers)
+// window.addEventListener('load', alternatePlayers(0))
 
+function doStuff() {
+
+}
 // function to alternate players
+var player1 = new Player('Hamburger',burger)
+var player2 = new Player('Hotdog',hotdog)
+var game = new Game()
+
 function alternatePlayers() {
-  var game = new Game()
-  if (game.currentPlayer) {
-    game.currentPlayer = false
+  if (game.currentPlayer == 1) {
+    game.currentPlayer = 0
+    playerTurn.innerText = `Hotdog, its your turn!`
+    placeItem('hamburger')
   } else {
-    game.currentPlayer = true
+    game.currentPlayer = 1
+    playerTurn.innerText = `Hamburger, its your turn!`
+    placeItem('hotdog')
+
   }
 }
 
+// function switchPlayer() {
+//     if (player === 'Hotdog')
+//         player = 'Hamburger';
+//     else if (player ==='Hamburger')
+//         player = 'Hotdog';
+// }
+
 function placeItem(item) {
   console.log(event.target)
- event.target.classList.add('hamburger', 'selected')
+ event.target.classList.add(item, 'selected')
 
 }
 //function increase score
