@@ -33,16 +33,19 @@ var possibleWins = [
   [0,4,8],
   [2,4,6]
   ]
-gameBoard.addEventListener('click', alternatePlayers)
+gameBoard.addEventListener('click', validateMove)
 // window.addEventListener('load', alternatePlayers(0))
 
-function doStuff() {
-
+function determineWinner() {
+  for (var i = 0; i < possibleWins.length; i++) {
+    console.log(possibleWins[i])
+    if(possibleWins[i] === board){}
+  }
 }
 // function to alternate players
-var player1 = new Player('Hamburger',burger)
-var player2 = new Player('Hotdog',hotdog)
-var game = new Game()
+var player1 = new Player('Hamburger', burger)
+var player2 = new Player('Hotdog', hotdog)
+var game = new Game(player1, player2)
 
 function alternatePlayers() {
   if (game.currentPlayer == 1) {
@@ -53,20 +56,21 @@ function alternatePlayers() {
     game.currentPlayer = 1
     playerTurn.innerText = `Hamburger, its your turn!`
     placeItem('hotdog')
-
   }
+  // determineWinner()
 }
-
-// function switchPlayer() {
-//     if (player === 'Hotdog')
-//         player = 'Hamburger';
-//     else if (player ==='Hamburger')
-//         player = 'Hotdog';
-// }
 
 function placeItem(item) {
   console.log(event.target)
  event.target.classList.add(item, 'selected')
+}
+
+// is move allowed?
+function validateMove() {
+  if (!event.target.classList.contains('selected')) {
+  console.log('invalid')
+  alternatePlayers()
+  }
 
 }
 //function increase score
@@ -75,7 +79,6 @@ function placeItem(item) {
 
 //when a game is over, clear the board with " "
 
-//random function for who goes first?
 
 //When all spaces are full but no winner, alert draw.
 
