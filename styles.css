@@ -90,14 +90,11 @@ h5 {
 }
 
 .hamburger {
-  /* background-repeat: no-repeat; */
   background: url(https://www.svgrepo.com/show/43115/burger.svg);
 
 }
 
 .hotdog {
-  /* background-repeat: no-repeat; */
-  /* background-size: contain; */
   background: url(https://www.svgrepo.com/show/14909/hot-dog.svg)
 }
 
@@ -111,6 +108,6 @@ h5 {
   border-width: thick;
   border-style: solid;
   border-color: #D26522;
-  margin-top: 20px;
+  margin-top: 35px;
   width: 300px;
 }
