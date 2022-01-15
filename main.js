@@ -29,6 +29,7 @@ function validateMove() {
 function determineTie() {
   if (!board.includes("")) {
     playerTurn.innerText = `It's A Tie! Try Again!`
+    triggerReset()
   }
 }
 
@@ -46,8 +47,8 @@ function alternatePlayers() {
 
 function placeItem(item) {
   var i = event.target.id.slice(1)
-  event.target.classList.add(item, 'selected')
   board.splice(i, 1, item)
+  event.target.classList.add(board[i], 'selected')
   determineWinner()
 }
 
@@ -57,7 +58,6 @@ function determineWinner() {
     var a = board[winCondition[0]]
     var b = board[winCondition[1]]
     var c = board[winCondition[2]]
-
     if (a === "" || b === "" || c === "") {
       continue
     }
@@ -73,17 +73,50 @@ function declareWinner() {
     playerTurn.innerText = `Hamburger Wins!! Relish This Moment!`
     player1.wins += 1
     updateScore()
+    triggerReset()
   }
   if (game.currentPlayer === 1){
     playerTurn.innerText = `Congrats, Hotdog, You're a Weiner!!`
     player2.wins += 1
     updateScore()
+    triggerReset()
   }
 }
 
 function updateScore() {
   counterOne.innerText = player1.wins
   counterTwo.innerText = player2.wins
+}
+
+function triggerReset() {
+  var boardReset = setTimeout(resetBoard, 3000);
+  return boardReset
+  // alternatePlayers()
+}
+
+function triggerPlayerTurn() {
+  var playerRefresh = setTimeout(refreshPlayerTurn, 3000)
+  return playerRefresh
+}
+
+function resetBoard() {
+  var squares = document.querySelectorAll('.square')
+  for (var i = 0; i < squares.length; i++){
+    squares[i].classList.remove('selected')
+    squares[i].classList.remove('hamburger')
+    squares[i].classList.remove('hotdog')
+  }
+    board = ["", "", "", "", "", "", "", "", ""]
+    this.roundWon = false
+    if (game.currentPlayer == 0) {
+      playerTurn.innerText = `Hotdog, its your turn!`
+    } else {
+      playerTurn.innerText = `Hamburger, its your turn!`
+    }
+}
+
+function refreshPlayerTurn() {
+  playerTurn.innerText = `${loser}, its your turn!`
 }
 
 //when a game is over, clear the board with " "
