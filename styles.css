@@ -100,3 +100,17 @@ h5 {
   /* background-size: contain; */
   background: url(https://www.svgrepo.com/show/14909/hot-dog.svg)
 }
+
+.start-new-game {
+  height: 45px;
+  background: #D26522;
+  color: #E9E9F3;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 32px;
+  border-width: thick;
+  border-style: solid;
+  border-color: #D26522;
+  margin-top: 20px;
+  width: 300px;
+}
