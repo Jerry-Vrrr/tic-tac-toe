@@ -2,7 +2,7 @@ var gameBoard = document.querySelector('.game-board')
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
 var playerTurn = document.querySelector('.player-turn')
-
+var newGameButton = document.querySelector('.start-new-game')
 
 var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
@@ -14,7 +14,7 @@ var possibleWins = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6],
   [1,4,7], [2,5,8], [0,4,8], [2,4,6] ]
 
 gameBoard.addEventListener('click', validateMove)
-
+newGameButton.addEventListener('click', newGame)
 function validateMove() {
   determineWinner()
   updateScore()
@@ -119,5 +119,6 @@ function refreshPlayerTurn() {
   playerTurn.innerText = `${loser}, its your turn!`
 }
 
-//when a game is over, clear the board with " "
-//reset board function
+function newGame() {
+  location.reload()
+}
