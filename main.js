@@ -1,29 +1,32 @@
+/*~~~~~~~~~~~~QUERY SELECTORS~~~~~~~~~~~~*/
 var gameBoard = document.querySelector('.game-board')
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
 var playerTurn = document.querySelector('.player-turn')
 var newGameButton = document.querySelector('.start-new-game')
-
+/*~~~~~~~~~~~~GAMEPLAY VARIABLES~~~~~~~~~~~~*/
 var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
 var player1 = new Player('Hamburger', burger)
 var player2 = new Player('Hotdog', hotdog)
 var game = new Game(player1, player2)
+/*~~~~~~~~~~~~BOARD AND SCORING ARRAUS~~~~~~~~~~~~*/
 var board = ["", "", "", "", "", "", "", "", ""]
 var possibleWins = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6],
   [1,4,7], [2,5,8], [0,4,8], [2,4,6] ]
-
+/*~~~~~~~~~~~~EVENT LISTENERS~~~~~~~~~~~~*/
 gameBoard.addEventListener('click', validateMove)
 newGameButton.addEventListener('click', newGame)
+/*~~~~~~~~~~~~functions~~~~~~~~~~~~*/
 function validateMove() {
-  determineWinner()
-  updateScore()
+    determineWinner()
+    updateScore()
   if (!event.target.classList.contains('selected')) {
-  alternatePlayers()
+    alternatePlayers()
   } else {
-  window.alert('Keep Yer Danged Snacks Away From My Danged Snacks!!!')
-  }
-  determineTie()
+      window.alert('Keep Yer Danged Snacks Away From My Danged Snacks!!!')
+    }
+    determineTie()
 }
 
 function determineTie() {
@@ -39,10 +42,10 @@ function alternatePlayers() {
     playerTurn.innerText = `Hotdog, its your turn!`
     placeItem('hamburger')
   } else {
-    game.currentPlayer = 1
-    playerTurn.innerText = `Hamburger, its your turn!`
-    placeItem('hotdog')
-  }
+      game.currentPlayer = 1
+      playerTurn.innerText = `Hamburger, its your turn!`
+      placeItem('hotdog')
+    }
 }
 
 function placeItem(item) {
@@ -58,13 +61,13 @@ function determineWinner() {
     var a = board[winCondition[0]]
     var b = board[winCondition[1]]
     var c = board[winCondition[2]]
-    if (a === "" || b === "" || c === "") {
-      continue
-    }
-    if (a === b && b === c) {
-      game.roundWon = true;
-      declareWinner()
-    }
+      if (a === "" || b === "" || c === "") {
+        continue
+      }
+      if (a === b && b === c) {
+        game.roundWon = true;
+        declareWinner()
+      }
   }
 }
 
@@ -91,12 +94,6 @@ function updateScore() {
 function triggerReset() {
   var boardReset = setTimeout(resetBoard, 3000);
   return boardReset
-  // alternatePlayers()
-}
-
-function triggerPlayerTurn() {
-  var playerRefresh = setTimeout(refreshPlayerTurn, 3000)
-  return playerRefresh
 }
 
 function resetBoard() {
@@ -108,15 +105,11 @@ function resetBoard() {
   }
     board = ["", "", "", "", "", "", "", "", ""]
     this.roundWon = false
-    if (game.currentPlayer == 0) {
-      playerTurn.innerText = `Hotdog, its your turn!`
-    } else {
+  if (game.currentPlayer == 0) {
+    playerTurn.innerText = `Hotdog, its your turn!`
+  } else {
       playerTurn.innerText = `Hamburger, its your turn!`
     }
-}
-
-function refreshPlayerTurn() {
-  playerTurn.innerText = `${loser}, its your turn!`
 }
 
 function newGame() {
