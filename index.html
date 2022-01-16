@@ -5,9 +5,13 @@
       <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu' rel='stylesheet' type='styles.css'>
       <link rel='stylesheet' href='styles.css'>
   </head>
-
-  <wrapper class='wrapper'>
   <body>
+  <container class='start-screen'>
+    <h1>Tic-Snack-Toe<br>Start Game?</h1>
+    <input class='start-button' type="button" value="Start"/>
+  </container>
+  <wrapper class='wrapper'>
+
     <section class='player-one'>
       <h2>Player One</h2>
       <img class='player' src='https://www.svgrepo.com/show/43115/burger.svg' alt='burger'>
@@ -45,6 +49,9 @@
       <label class='counter'>Wins<br></label>
       <counter class='counter' id='counterTwo'>0</counter>
     </section>
+    <audio class='audio hidden'controls autoplay>
+      <source src='assets/AI 2 - Vibe Mountain.mp3' type="audio/mp3">
+    </audio>
     <script type='text/javascript' src='player.js'></script>
     <script type='text/javascript' src='game.js'></script>
     <script type='text/javascript' src='main.js'></script>
