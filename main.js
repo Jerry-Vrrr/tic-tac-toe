@@ -21,6 +21,7 @@ newGameButton.addEventListener('click', newGame)
 function validateMove() {
     determineWinner()
     updateScore()
+    playMusic()
   if (!event.target.classList.contains('selected')) {
     alternatePlayers()
   } else {
@@ -114,4 +115,10 @@ function resetBoard() {
 
 function newGame() {
   location.reload()
+}
+
+function playMusic() {
+  var music = document.querySelector('.audio')
+  music.play()
+  music.volume = 0.2
 }
