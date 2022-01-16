@@ -7,11 +7,8 @@ var player1Section = document.querySelector('.player-one')
 var player2Section = document.querySelector('.player-two')
 var gameSection = document.querySelector('.game-section')
 var startScreen = document.querySelector('.start-screen')
-
 var newGameButton = document.querySelector('.start-new-game')
 var startButton = document.querySelector('.start-button')
-
-
 /*~~~~~~~~~~~~GAMEPLAY VARIABLES~~~~~~~~~~~~*/
 var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
@@ -30,6 +27,7 @@ startButton.addEventListener('click', hideStartScreen)
 function validateMove() {
     determineWinner()
     updateScore()
+    playMusic()
   if (!event.target.classList.contains('selected')) {
     alternatePlayers()
   } else {
