@@ -15,17 +15,12 @@ var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
 var player1 = new Player('Hamburger', burger)
 var player2 = new Player('Hotdog', hotdog)
 var game = new Game(player1, player2)
-/*~~~~~~~~~~~~BOARD AND SCORING ARRAUS~~~~~~~~~~~~*/
-var board = ["", "", "", "", "", "", "", "", ""]
-var possibleWins = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6],
-  [1,4,7], [2,5,8], [0,4,8], [2,4,6] ]
 /*~~~~~~~~~~~~EVENT LISTENERS~~~~~~~~~~~~*/
 gameBoard.addEventListener('click', validateMove)
 newGameButton.addEventListener('click', newGame)
 startButton.addEventListener('click', hideStartScreen)
 /*~~~~~~~~~~~~functions~~~~~~~~~~~~*/
 function validateMove() {
-    determineWinner()
     updateScore()
     playMusic()
   if (!event.target.classList.contains('selected')) {
@@ -37,7 +32,7 @@ function validateMove() {
 }
 
 function determineTie() {
-  if (!board.includes("")) {
+  if (!game.board.includes("")) {
     playerTurn.innerText = `It's A Tie! Try Again!`
     triggerReset()
   }
@@ -59,25 +54,9 @@ function alternatePlayers() {
 
 function placeItem(item) {
   var i = event.target.id.slice(1)
-  board.splice(i, 1, item)
-  event.target.classList.add(board[i], 'selected')
-  determineWinner()
-}
-
-function determineWinner() {
-  for (var i = 0; i < possibleWins.length; i++) {
-    var winCondition = possibleWins[i]
-    var a = board[winCondition[0]]
-    var b = board[winCondition[1]]
-    var c = board[winCondition[2]]
-      if (a === "" || b === "" || c === "") {
-        continue
-      }
-      if (a === b && b === c) {
-        game.roundWon = true;
-        declareWinner()
-      }
-  }
+  game.board.splice(i, 1, item)
+  event.target.classList.add(game.board[i], 'selected')
+  game.determineWinner()
 }
 
 function declareWinner() {
@@ -86,6 +65,7 @@ function declareWinner() {
     player1.wins += 1
     updateScore()
     triggerReset()
+     // game.determineWinner()
   }
   if (game.currentPlayer === 1){
     playerTurn.innerText = `Congrats, Hotdog, You're a Weiner!!`
@@ -112,8 +92,7 @@ function resetBoard() {
     squares[i].classList.remove('hamburger')
     squares[i].classList.remove('hotdog')
   }
-    board = ["", "", "", "", "", "", "", "", ""]
-    this.roundWon = false
+    game.board = ["", "", "", "", "", "", "", "", ""]
   if (game.currentPlayer == 0) {
     playerTurn.innerText = `Hotdog, its your turn!`
   } else {
