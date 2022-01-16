@@ -3,7 +3,12 @@ var gameBoard = document.querySelector('.game-board')
 var counterOne = document.querySelector('#counterOne')
 var counterTwo = document.querySelector('#counterTwo')
 var playerTurn = document.querySelector('.player-turn')
+var player1Section = document.querySelector('.player-one')
+var player2Section = document.querySelector('.player-two')
+var gameSection = document.querySelector('.game-section')
+var startScreen = document.querySelector('.start-screen')
 var newGameButton = document.querySelector('.start-new-game')
+var startButton = document.querySelector('.start-button')
 /*~~~~~~~~~~~~GAMEPLAY VARIABLES~~~~~~~~~~~~*/
 var burger = `<img src='https://www.svgrepo.com/show/43115/burger.svg'>`
 var hotdog = `<img src='https://www.svgrepo.com/show/14909/hot-dog.svg'>`
@@ -17,6 +22,7 @@ var possibleWins = [ [0,1,2], [3,4,5], [6,7,8], [0,3,6],
 /*~~~~~~~~~~~~EVENT LISTENERS~~~~~~~~~~~~*/
 gameBoard.addEventListener('click', validateMove)
 newGameButton.addEventListener('click', newGame)
+startButton.addEventListener('click', hideStartScreen)
 /*~~~~~~~~~~~~functions~~~~~~~~~~~~*/
 function validateMove() {
     determineWinner()
@@ -121,4 +127,16 @@ function playMusic() {
   var music = document.querySelector('.audio')
   music.play()
   music.volume = 0.2
+}
+
+function hideStartScreen() {
+  startScreen.classList.add('hidden')
+  show(player1Section)
+  show(player2Section)
+  show(gameSection)
+  playMusic()
+}
+
+function show(section) {
+  section.classList.remove('hidden')
 }
