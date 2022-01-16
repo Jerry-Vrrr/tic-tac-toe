@@ -1,10 +1,4 @@
 
-.wrapper {
-  display: flex;
-  height: 100%;
-  width: 100%;
-}
-
 body,
 html {
   /* background-color: green; */
@@ -15,6 +9,12 @@ html {
   align-items: center;
   font-family: 'Ubuntu Mono', sans-serif;
   font-weight: bold;
+}
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
 h1 {
@@ -91,7 +91,6 @@ h5 {
 
 .hamburger {
   background: url(https://www.svgrepo.com/show/43115/burger.svg);
-
 }
 
 .hotdog {
