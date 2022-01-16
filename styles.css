@@ -24,7 +24,27 @@ h1 {
 h5 {
   margin: 40px;
   margin-top: 30px;
+  /* animation-duration: 3s;
+  animation-name: slidein; */
 }
+
+/* .amimate {
+  animation-duration: 3s; */
+  /* animation-name: slidein;
+  animation-direction: left; */
+/* } */
+
+/* @keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+} */
 
 .game-section {
   display: flex;
@@ -89,11 +109,11 @@ h5 {
 }
 
 .hamburger {
-  background: url(https://www.svgrepo.com/show/43115/burger.svg);
+  background: url(assets/burger-svgrepo-com.svg);
 }
 
 .hotdog {
-  background: url(https://www.svgrepo.com/show/14909/hot-dog.svg)
+  background: url(assets/hot-dog-svgrepo-com.svg)
 }
 
 .start-new-game {
@@ -139,6 +159,20 @@ h5 {
 h3 {
   margin-top: 475px;
   margin-bottom: 30px
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 .hidden {
