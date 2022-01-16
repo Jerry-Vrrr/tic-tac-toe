@@ -58,6 +58,7 @@ h5 {
   border-style: dashed;
   border-width: thick;
   background-color: yellow;
+  opacity: 95%;
   color: black;
   font-size: 50px;
   text-align: center;
@@ -100,6 +101,7 @@ h5 {
   border-style: solid;
   border-radius: 15px;
   background-color: red;
+  opacity: 90%;
   align-self: flex-start;
 }
 
