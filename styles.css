@@ -19,32 +19,25 @@ html {
 h1 {
   margin-top: 40px;
   margin-bottom: 0px;
+  animation: grow-and-shrink 4000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
+@keyframes grow-and-shrink {
+    0% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 h5 {
   margin: 40px;
   margin-top: 30px;
-  /* animation-duration: 3s;
-  animation-name: slidein; */
 }
-
-/* .amimate {
-  animation-duration: 3s; */
-  /* animation-name: slidein;
-  animation-direction: left; */
-/* } */
-
-/* @keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-} */
 
 .game-section {
   display: flex;
@@ -58,6 +51,7 @@ h5 {
   border-style: dashed;
   border-width: thick;
   background-color: yellow;
+  opacity: 95%;
   color: black;
   font-size: 50px;
   text-align: center;
@@ -94,12 +88,12 @@ h5 {
   height: 90vh;
   width: 325px;
   color: black;
-  border-width: thick;
   border-color: green;
   border-width: thick;
   border-style: solid;
   border-radius: 15px;
   background-color: red;
+  opacity: 90%;
   align-self: flex-start;
 }
 
@@ -109,12 +103,21 @@ h5 {
 }
 
 .hamburger {
+  animation: grow-and-shrink 250ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: once;
+  animation-direction: alternate;
   background: url(assets/burger-svgrepo-com.svg);
 }
 
 .hotdog {
+  animation: grow-and-shrink 500ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: once;
+  animation-direction: alternate;
   background: url(assets/hot-dog-svgrepo-com.svg)
 }
+
 
 .start-new-game {
   height: 45px;
@@ -158,21 +161,22 @@ h5 {
 
 h3 {
   margin-top: 475px;
-  margin-bottom: 30px
-  animation-duration: 3s;
+  margin-bottom: 30px;
+  animation-duration: 5s;
   animation-name: slidein;
 }
-
 @keyframes slidein {
   from {
-    margin-left: 100%;
-    width: 300%;
+    transform: translateX(-100%);
+    font-size: 500%;
   }
-
   to {
-    margin-left: 0%;
-    width: 100%;
+    transform: translateX(0%);
+    font-size: 110%;
   }
+  /* to {
+    transform: translateX(0%);
+  } */
 }
 
 .hidden {

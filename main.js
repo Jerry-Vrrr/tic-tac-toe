@@ -46,7 +46,7 @@ function alternatePlayers() {
     placeItem('hamburger')
   } else {
       game.currentPlayer = 1
-      cssAnimate()
+      // cssAnimate()
       playerTurn.innerText = `Hamburger, its your turn!`
       placeItem('hotdog')
     }
@@ -65,7 +65,6 @@ function declareWinner() {
     player1.wins += 1
     updateScore()
     triggerReset()
-     // game.determineWinner()
   }
   if (game.currentPlayer === 1){
     playerTurn.innerText = `Congrats, Hotdog, You're a Weiner!!`
