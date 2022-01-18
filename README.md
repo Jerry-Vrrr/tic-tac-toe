@@ -6,29 +6,33 @@ This project allows users to....
 
 The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo.html)
 
+## Mod 1 final projest intended to develop skills around:
+* Solidify and demonstrate your understanding of:
+  * DRY JavaScript
+  * Event delegation to handle similar event listeners
+* Understand the difference between the data model and how the data is displayed on the DOM
+* Iterate through/filter DOM elements using for loops
+* Use problem solving process to break down large problems in order to be able to solve things step by step.
+* Additional Goals:
+ * Demonstrate and practice advanced CSS and CSS animations
+ * Adding background music to web pages
+
+ ## Abstract
+ Tic-Snack-Toe is a play on the classic children's game of tic-tac-toe that dates back to around 1300BC from where such game boards have been found etched into stone and clay. It's like that, but with fun snacks and snazzy 8-bit music jams. For more info on the origins and history of this timeless game, visit [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
+
 ## Technologies Used
-​Built With: Javascript, HTML, CSS and JQuery <br>
-Web Browser: Google Chrome<br>
+​Built With: Javascript, HTML, and CSS<br>
+Web Browser: Google Chrome and Safari<br>
 Text Editor: Atom​​​
 
-## [Deploy Link](https://github.com/Jerry-Vrrr/tic-tac-toe)
+## [Project Link](https://github.com/Jerry-Vrrr/tic-tac-toe)
+
+## Setup
+* To use this application:
+  * Download the project
+  * Open the html in your browser
+  * Follow the below Project Roadmap
 
 ## Project Roadmap:
-1. The user must include inputs in the "Title" and "Body" sections.
 
-
-2. When a user clicks the Save Button, the new idea card will appear on the webpage.
-
-
-
-3. When a user clicks the delete button on the new idea card, the card will delete from view.
-
-
-
-4. When a user clicks the "favorite" star, the star will show as a different color to display that the card has been favorited.
-
-
-## Future Additions:
-1. When the user clicks the show starred ideas button, they will see all their favorited idea cards.
-2. The user can then toggle between their favorite ideas and all other ideas.
-3. The user should be able to use the search bar to filter ideas.
+![gif](/Users/jerryvohrer/turing/mod1-projects/tic-tac-toe/assets/start screen.gif)
