@@ -41,12 +41,10 @@ function determineTie() {
 function alternatePlayers() {
   if (game.currentPlayer == 1) {
     game.currentPlayer = 0
-    cssAnimate()
     playerTurn.innerText = `Hotdog, its your turn!`
     placeItem('hamburger')
   } else {
       game.currentPlayer = 1
-      // cssAnimate()
       playerTurn.innerText = `Hamburger, its your turn!`
       placeItem('hotdog')
     }
@@ -119,8 +117,4 @@ function hideStartScreen() {
 
 function show(section) {
   section.classList.remove('hidden')
-}
-
-function cssAnimate() {
-  playerTurn.classList.add('animate')
 }
